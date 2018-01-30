@@ -1,0 +1,12 @@
+version: "2"
+services:
+    ubuntu:
+        build: .
+        ports:
+            - 8881:8881
+        volumes:
+            #- ./pics:/ssd_keras/pics
+            - ./ssd_keras:/ssd_keras
+        working_dir: /ssd_keras
+        command: bash -c 'jupyter notebook --ip="*" --port=8881 --allow-root'
+        #command: bash -c ' '
